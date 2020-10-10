@@ -11,6 +11,12 @@ app.use(express.static("public"));
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
+app.get("api/config", (req, res) => {
+    res.json({
+        success: true,
+    })
+})
+
 // Set Handlebars.
 const exphbs = require("express-handlebars");
 
