@@ -11,19 +11,6 @@ app.use(express.static("public"));
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
-// //VIEWS ROUTES
-
-// app.get("/", (req,res) => {
-//     res.render("index")
-// })
-
-// //API ROUTES
-// app.get("/api/config", (req, res) => {
-//     res.json({
-//         success: true,
-//     })
-// })
-
 // Set Handlebars.
 const exphbs = require("express-handlebars");
 
