@@ -11,11 +11,18 @@ app.use(express.static("public"));
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
-app.get("/api/config", (req, res) => {
-    res.json({
-        success: true,
-    })
-})
+// //VIEWS ROUTES
+
+// app.get("/", (req,res) => {
+//     res.render("index")
+// })
+
+// //API ROUTES
+// app.get("/api/config", (req, res) => {
+//     res.json({
+//         success: true,
+//     })
+// })
 
 // Set Handlebars.
 const exphbs = require("express-handlebars");
@@ -24,9 +31,9 @@ app.engine("handlebars", exphbs({ defaultLayout: "main" }));
 app.set("view engine", "handlebars");
 
 // Import routes and give the server access to them.
-// const routes = require("./controllers/burgers_controller");
+const routes = require("./controllers/burgers_controller.js");
 
-// app.use(routes);
+app.use(routes);
 
 // Start our server so that it can begin listening to client requests.
 app.listen(PORT, function() {
